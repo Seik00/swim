@@ -1,3 +1,4 @@
+import 'package:app/meets/program.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -64,39 +65,47 @@ class _HomepageState extends State<Homepage> {
                     physics: const BouncingScrollPhysics(),
                     itemCount: 1,
                     itemBuilder: (context, int i) {
-                      return Container(
-                        margin: const EdgeInsets.only(top: 20),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 30, vertical: 12),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromRGBO(224, 228, 227, 1)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: const [
-                                Icon(Icons.calendar_month),
-                                Text(
-                                  'May 13, 2023 to May 14, 2023',
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                                ('Sportexcel junior swimming circuit 2023')
-                                    .toUpperCase(),
-                                style: const TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600)),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text('SHAH ALAM, SEL MY',
-                                style: TextStyle(fontSize: 12)),
-                          ],
+                      return GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const MeetProgram())),
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 12),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: const Color.fromRGBO(224, 228, 227, 1)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: const [
+                                  Icon(Icons.calendar_month),
+                                  Text(
+                                    'May 13, 2023 to May 14, 2023',
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                  ('Sportexcel junior swimming circuit 2023')
+                                      .toUpperCase(),
+                                  style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600)),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text('SHAH ALAM, SEL MY',
+                                  style: TextStyle(fontSize: 12)),
+                            ],
+                          ),
                         ),
                       );
                     }),

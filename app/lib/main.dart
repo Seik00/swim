@@ -54,14 +54,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       theme: ThemeData(
           // primarySwatch: kPrimaryColor,
-          appBarTheme: AppBarTheme(
-              color: Colors.white,
+          appBarTheme: const AppBarTheme(
+              color: const Color(0xff000f9f),
               elevation: 0,
+              iconTheme: IconThemeData(
+                color: Colors.white
+              ),
               titleTextStyle: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 20)),
-          iconTheme: IconThemeData(color: Colors.grey),
+          iconTheme: const IconThemeData(color: Colors.grey),
           primaryColor: Colors.blue,
           indicatorColor: Colors.blue,
           shadowColor: const Color.fromRGBO(171, 172, 175, 1),
