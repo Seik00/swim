@@ -1,5 +1,6 @@
 import 'package:app/meets/schedule/meet.dart';
 import 'package:app/teamScore/teamList.dart';
+import 'package:app/teamScore/team.dart';
 import 'package:flutter/material.dart';
 
 class MeetProgram extends StatefulWidget {
@@ -136,18 +137,23 @@ class _MeetProgramState extends State<MeetProgram> {
                           fontWeight: FontWeight.normal,
                         )),
                   ),
-                  const ListTile(
-                    leading: Icon(
+                  ListTile(
+                    onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const TeamPage())),
+                    leading: const Icon(
                       Icons.waves,
                       color: Colors.amber,
                       size: 30,
                     ),
-                    title: Text('Teams',
+                    title: const Text('Teams',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         )),
-                    subtitle: Text('Track your team\'s progress',
+                    subtitle: const Text('Track your team\'s progress',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
