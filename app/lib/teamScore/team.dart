@@ -42,11 +42,11 @@ class _TeamPageState extends State<TeamPage> {
               Container(
                 width: double.infinity,
                 color: const Color(0xFF164BBB),
-                child: const Padding(
-                  padding: EdgeInsets.all(20.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         'NEW WAVE SWIMMING CLUB',
                         style: TextStyle(
