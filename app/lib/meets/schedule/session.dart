@@ -81,6 +81,7 @@ class _SessionScheduleState extends State<SessionSchedule> {
                             builder: (context) => const EventDetails())),
                     child: IntrinsicHeight(
                       child: Container(
+                        color: Colors.transparent,
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
@@ -139,7 +140,7 @@ class _SessionScheduleState extends State<SessionSchedule> {
                                           style: TextStyle(
                                             fontSize: 12,
                                             color: Colors.amber,
-                                            fontWeight: FontWeight.normal,
+                                            fontWeight: FontWeight.w500,
                                           )),
                                     ],
                                   ),
@@ -155,77 +156,83 @@ class _SessionScheduleState extends State<SessionSchedule> {
                     ),
                   ),
                   Divider(),
-                  IntrinsicHeight(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Column(
-                            children: const [
-                              Text('EVENT',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.grey)),
-                              Expanded(
-                                child: FittedBox(
-                                    child: Text(
-                                  '102',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.grey),
-                                )),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text('Girls 10&U 50 Meter Back',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EventDetails())),
+                    child: IntrinsicHeight(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: const [
+                                Text('EVENT',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey)),
+                                Expanded(
+                                  child: FittedBox(
+                                      child: Text(
+                                    '102',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.grey),
                                   )),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              IntrinsicHeight(
-                                child: Row(
-                                  children: const [
-                                    Text('Finals',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal,
-                                        )),
-                                    VerticalDivider(
-                                      thickness: 1,
-                                    ),
-                                    Text('10 and under',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal,
-                                        )),
-                                    VerticalDivider(
-                                      thickness: 1,
-                                    ),
-                                    Text('Completed',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.amber,
-                                          fontWeight: FontWeight.normal,
-                                        )),
-                                  ],
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Girls 10&U 50 Meter Back',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                IntrinsicHeight(
+                                  child: Row(
+                                    children: const [
+                                      Text('Finals',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.normal,
+                                          )),
+                                      VerticalDivider(
+                                        thickness: 1,
+                                      ),
+                                      Text('10 and under',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.normal,
+                                          )),
+                                      VerticalDivider(
+                                        thickness: 1,
+                                      ),
+                                      Text('Completed',
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.amber,
+                                            fontWeight: FontWeight.normal,
+                                          )),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

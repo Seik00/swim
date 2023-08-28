@@ -1,4 +1,5 @@
 import 'package:app/meets/schedule/meet.dart';
+import 'package:app/swimmer/details.dart';
 import 'package:flutter/material.dart';
 
 class EventDetails extends StatefulWidget {
@@ -38,7 +39,7 @@ class _EventDetailsState extends State<EventDetails> {
                                     color: Colors.black)),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.all(6.0),
+                                padding: EdgeInsets.symmetric(vertical:6.0),
                                 child: FittedBox(
                                     child: Text(
                                   '101',
@@ -114,100 +115,107 @@ class _EventDetailsState extends State<EventDetails> {
               padding: const EdgeInsets.all(10.0),
               child: ListView(
                 children: [
-                  IntrinsicHeight(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: const [
-                              Text('Place',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.grey)),
-                              Expanded(
-                                child: FittedBox(
-                                    child: Text(
-                                  '1',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.black),
-                                )),
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SwimDetails())),
+                    child: IntrinsicHeight(
+                      child: Container(
+                        color: Colors.transparent,
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: const [
+                                Text('Place',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey)),
+                                Expanded(
+                                  child: FittedBox(
+                                      child: Text(
+                                    '1',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.black),
+                                  )),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text('Zhi Ju Ho',
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  const SizedBox(
+                                    height: 2,
+                                  ),
+                                  IntrinsicHeight(
+                                    child: Row(
+                                      children: const [
+                                        Text('DSA',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                            )),
+                                        VerticalDivider(
+                                          thickness: 1,
+                                        ),
+                                        Text('10',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 2,
+                                  ),
+                                  Text('Dropped: -1.65',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.greenAccent[700],
+                                        fontWeight: FontWeight.w500,
+                                      )),
+                                ],
                               ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 30,
-                          ),
-                          Expanded(
-                            child: Column(
+                            ),
+                            const SizedBox(
+                              width: 30,
+                            ),
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('Zhi Ju Ho',
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Text('35.01',
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     )),
-                                const SizedBox(
-                                  height: 2,
-                                ),
-                                IntrinsicHeight(
-                                  child: Row(
-                                    children: const [
-                                      Text('DSA',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          )),
-                                      VerticalDivider(
-                                        thickness: 1,
-                                      ),
-                                      Text('10',
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          )),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 2,
-                                ),
-                                Text('Dropped: -1.65',
+                                Text('TIME',
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.greenAccent[700],
-                                      fontWeight: FontWeight.w500,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.normal,
                                     )),
                               ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 30,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text('35.01',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              Text('TIME',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.normal,
-                                  )),
-                            ],
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
