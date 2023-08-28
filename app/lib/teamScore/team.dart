@@ -1,3 +1,4 @@
+import 'package:app/swimmer/scores.dart';
 import 'package:flutter/material.dart';
 
 class TeamPage extends StatefulWidget {
@@ -118,7 +119,7 @@ class _TeamPageState extends State<TeamPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const TeamPage(),
+                                  builder: (context) => const SwimmerScores(),
                                 ),
                               );
                             },
