@@ -1,4 +1,5 @@
 import 'package:app/meets/schedule/meet.dart';
+import 'package:app/swimmer/list.dart';
 import 'package:app/teamScore/teamList.dart';
 import 'package:app/teamScore/team.dart';
 import 'package:flutter/material.dart';
@@ -100,10 +101,9 @@ class _MeetProgramState extends State<MeetProgram> {
                 children: [
                   ListTile(
                     onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const MeetSchedule())),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MeetSchedule())),
                     leading: const Icon(
                       Icons.calendar_today,
                       color: Colors.amber,
@@ -120,18 +120,24 @@ class _MeetProgramState extends State<MeetProgram> {
                           fontWeight: FontWeight.normal,
                         )),
                   ),
-                  const ListTile(
-                    leading: Icon(
+                  ListTile(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SwimmerList(),
+                      ),
+                    ),
+                    leading: const Icon(
                       Icons.pool,
                       color: Colors.amber,
                       size: 30,
                     ),
-                    title: Text('Swimmers',
+                    title: const Text('Swimmers',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         )),
-                    subtitle: Text('Find swimmers and follow favourite',
+                    subtitle: const Text('Find swimmers and follow favourite',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
@@ -139,10 +145,9 @@ class _MeetProgramState extends State<MeetProgram> {
                   ),
                   ListTile(
                     onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TeamPage())),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TeamPage())),
                     leading: const Icon(
                       Icons.waves,
                       color: Colors.amber,
@@ -161,10 +166,9 @@ class _MeetProgramState extends State<MeetProgram> {
                   ),
                   ListTile(
                     onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TeamList())),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TeamList())),
                     leading: const Icon(
                       Icons.calendar_today,
                       color: Colors.amber,

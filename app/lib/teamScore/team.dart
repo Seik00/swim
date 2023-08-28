@@ -123,7 +123,8 @@ class _TeamPageState extends State<TeamPage> {
                                 ),
                               );
                             },
-                            child: Padding(
+                            child: Container(
+                              color: Colors.transparent,
                               padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
                               child: Row(
                                 children: [
