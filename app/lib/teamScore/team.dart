@@ -8,7 +8,7 @@ class TeamPage extends StatefulWidget {
 }
 
 class _TeamPageState extends State<TeamPage> {
-  List<bool> isStarSelected = List.generate(10, (index) => false);
+  List<bool> isStarSelected = List.generate(20, (index) => false);
 
   Widget _buildColumn(String number, String letter) {
     return Column(
@@ -29,7 +29,7 @@ class _TeamPageState extends State<TeamPage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFF164BBB),
+          backgroundColor: const Color(0xff000f9f),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.pop(context),
@@ -41,7 +41,7 @@ class _TeamPageState extends State<TeamPage> {
             children: <Widget>[
               Container(
                 width: double.infinity,
-                color: const Color(0xFF164BBB),
+                color: const Color(0xff000f9f),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -64,9 +64,9 @@ class _TeamPageState extends State<TeamPage> {
                 ),
               ),
               TabBar(
-                labelColor: const Color(0xFF164BBB),
+                labelColor: const Color(0xff000f9f),
                 unselectedLabelColor: Colors.grey,
-                indicatorColor: const Color(0xFF164BBB),
+                indicatorColor: const Color(0xff000f9f),
                 tabs: [
                   Tab(text: 'BOTH'),
                   Tab(text: 'MEN'),
@@ -113,51 +113,58 @@ class _TeamPageState extends State<TeamPage> {
                         shrinkWrap: true,
                         itemCount: scores.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: Center( // 使用Center确保图标在Expanded中居中
-                                    child: IconButton(
-                                      icon: Icon(
-                                        isStarSelected[index] ? Icons.star : Icons.star_border,
-                                        color: Color(0xFF164BBB),
-                                        size: 26.0,
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const TeamPage(),
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: IconButton(
+                                        icon: Icon(
+                                          isStarSelected[index] ? Icons.star : Icons.star_border,
+                                          color: Color(0xff000f9f),
+                                          size: 26.0,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            isStarSelected[index] = !isStarSelected[index];
+                                          });
+                                        },
                                       ),
-                                      onPressed: () {
-                                        setState(() {
-                                          isStarSelected[index] = !isStarSelected[index];
-                                        });
-                                      },
                                     ),
                                   ),
-                                ),
-                                SizedBox(width: 15.0), // 添加SizedBox来提供额外的间距
-                                Expanded(
-                                  flex: 6,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Noah Abdul Rizal ${index + 1}',
-                                          style: const TextStyle(fontSize: 16, color: Colors.black)),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      const Text('NWSC | Male | 10 | Points: 250'),
-                                    ],
+                                  SizedBox(width: 15.0),
+                                  Expanded(
+                                    flex: 6,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Noah Abdul Rizal ${index + 1}', style: const TextStyle(fontSize: 16, color: Colors.black)),
+                                        SizedBox(height: 10),
+                                        const Text('NWSC | Male | 10 | Points: 250'),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           );
-
                         },
                       ),
                   ],
                 ),
               ),
+
             ],
           ),
         ),

@@ -30,7 +30,7 @@ class _TeamListState extends State<TeamList> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFF164BBB),
+          backgroundColor: const Color(0xff000f9f),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.pop(context),
@@ -41,7 +41,7 @@ class _TeamListState extends State<TeamList> {
           child: Column(
             children: <Widget>[
               Container(
-                color: const Color(0xFF164BBB),
+                color: const Color(0xff000f9f),
                 child: const Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Center(
@@ -50,9 +50,9 @@ class _TeamListState extends State<TeamList> {
                 ),
               ),
               TabBar(
-                labelColor: const Color(0xFF164BBB),
+                labelColor: const Color(0xff000f9f),
                 unselectedLabelColor: Colors.grey,
-                indicatorColor: const Color(0xFF164BBB),
+                indicatorColor: const Color(0xff000f9f),
                 tabs: [
                   Tab(text: 'MEN'),
                   Tab(text: 'WOMEN'),

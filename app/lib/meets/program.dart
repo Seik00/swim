@@ -1,4 +1,5 @@
 import 'package:app/meets/schedule/meet.dart';
+import 'package:app/teamScore/teamList.dart';
 import 'package:flutter/material.dart';
 
 class MeetProgram extends StatefulWidget {
@@ -152,18 +153,23 @@ class _MeetProgramState extends State<MeetProgram> {
                           fontWeight: FontWeight.normal,
                         )),
                   ),
-                  const ListTile(
-                    leading: Icon(
-                      Icons.workspace_premium,
+                  ListTile(
+                    onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const TeamList())),
+                    leading: const Icon(
+                      Icons.calendar_today,
                       color: Colors.amber,
                       size: 30,
                     ),
-                    title: Text('Team Scores',
+                    title: const Text('Team Scores',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         )),
-                    subtitle: Text('View the overall results of the meet',
+                    subtitle: const Text('View the overall results of the meet',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
