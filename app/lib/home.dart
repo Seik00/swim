@@ -1,4 +1,5 @@
 import 'package:app/meets/program.dart';
+import 'package:app/swimmer/list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,12 +20,9 @@ class _HomepageState extends State<Homepage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          // title: const Text('Meets'),
-          leading: const Icon(
-            Icons.pool,
-            size: 40,
-          ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(20),
+          child: AppBar(),
         ),
         body: Column(
           children: [
@@ -37,42 +35,66 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Find your meeets or swimmers',
-                    style: TextStyle(
+                  Row(
+                    children: const [
+                      Icon(
+                        Icons.pool,
+                        size: 40,
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Find your swimmers',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 10,),
-                  Card(
-                    margin: const EdgeInsets.all(0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      children: const [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Icon(Icons.search),
-                        ),
-                        Expanded(
-                          child: TextField(
-                            style: TextStyle(fontSize: 12),
-                            decoration: InputDecoration(
-                              hintText: "Search",
-                              contentPadding:
-                                  EdgeInsets.symmetric(vertical: 10),
-                              isDense: true,
-                              fillColor: Colors.white,
-                              border: InputBorder.none,
-                            ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: List.generate(
+                      typeOption.length,
+                      (index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selected = index;
+                          });
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(right: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 8),
+                          decoration: BoxDecoration(
+                              color: selected == index
+                                  ? Colors.amber
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              border: Border.all(
+                                color: selected == index
+                                    ? Colors.amber
+                                    : Colors.grey,
+                              )),
+                          child: Text(
+                            typeOption[index],
+                            style: TextStyle(
+                                color: selected == index
+                                    ? Colors.black
+                                    : Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                  SizedBox(height: 40,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),
@@ -83,7 +105,45 @@ class _HomepageState extends State<Homepage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 10,
+                      height: 20,
+                    ),
+                    Card(
+                      elevation: 3,
+                      margin: const EdgeInsets.all(0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Icon(Icons.search),
+                          ),
+                          Expanded(
+                            child: TextField(
+                              onSubmitted: (value) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SwimmerList(value)));
+                              },
+                              style: const TextStyle(fontSize: 12),
+                              decoration: const InputDecoration(
+                                hintText: "Search",
+                                contentPadding:
+                                    EdgeInsets.symmetric(vertical: 10),
+                                isDense: true,
+                                fillColor: Colors.white,
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     const Text(
                       'Meets',
@@ -91,42 +151,7 @@ class _HomepageState extends State<Homepage> {
                           color: Colors.black, fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: List.generate(
-                        typeOption.length,
-                        (index) => GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selected = index;
-                            });
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 10),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 8),
-                            decoration: BoxDecoration(
-                                color: selected == index
-                                    ? const Color(0xff000f9f)
-                                    : Colors.white,
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(
-                                  color: selected == index
-                                      ? const Color(0xff000f9f)
-                                      : Colors.grey,
-                                )),
-                            child: Text(
-                              typeOption[index],
-                              style: TextStyle(
-                                  color: selected == index
-                                      ? Colors.white
-                                      : Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
+                      height: 0,
                     ),
                     Expanded(
                       child: ListView.builder(

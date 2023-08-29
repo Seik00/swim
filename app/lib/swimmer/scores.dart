@@ -60,7 +60,7 @@ class _SwimmerScoresState extends State<SwimmerScores> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(('Zhi Ju Ho').toUpperCase(),
+                            Text(('Raeka Ong').toUpperCase(),
                                 style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -165,7 +165,7 @@ class _SwimmerScoresState extends State<SwimmerScores> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text('Boys 10&U 50 Meter Back',
+                                      const Text('Girls 10&U 50 Meter Back',
                                           style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,

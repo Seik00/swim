@@ -58,7 +58,7 @@ class _EventDetailsState extends State<EventDetails> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(('Boys 10&U 50 Meter Back'),
+                            const Text(('Girls 10&U 50 Meter Back'),
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -153,7 +153,7 @@ class _EventDetailsState extends State<EventDetails> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text('Zhi Ju Ho',
+                                  const Text('Raeka Ong',
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontSize: 14,

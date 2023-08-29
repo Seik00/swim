@@ -99,7 +99,7 @@ class _SwimDetailsState extends State<SwimDetails> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(('Boys 10&U 50 Meter Back'),
+                              const Text(('Girls 10&U 50 Meter Back'),
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
@@ -176,7 +176,7 @@ class _SwimDetailsState extends State<SwimDetails> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Zhi Ju Ho',
+                      const Text('Raeka Ong',
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 14,

@@ -36,7 +36,7 @@ class _SwimmerMeetsState extends State<SwimmerMeets> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(('Zhi Ju Ho').toUpperCase(),
+                            Text(('Raeka Ong').toUpperCase(),
                                 style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class _SwimmerMeetsState extends State<SwimmerMeets> {
                                       )),
                                   VerticalDivider(
                                       thickness: 1, color: Colors.white),
-                                  Text('Male',
+                                  Text('Female',
                                       style: TextStyle(
                                         fontSize: 14,
                                         color: Colors.white,

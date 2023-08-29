@@ -153,7 +153,7 @@ class _TeamPageState extends State<TeamPage> {
                                       children: [
                                         Text('Noah Abdul Rizal ${index + 1}', style: const TextStyle(fontSize: 16, color: Colors.black)),
                                         SizedBox(height: 10),
-                                        const Text('NWSC | Male | 10 | Points: 250'),
+                                        const Text('NWSC | Female | 10 | Points: 250'),
                                       ],
                                     ),
                                   ),

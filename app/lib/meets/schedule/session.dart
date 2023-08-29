@@ -109,7 +109,7 @@ class _SessionScheduleState extends State<SessionSchedule> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text('Boys 10&U 50 Meter Back',
+                                const Text('Girls 10&U 50 Meter Back',
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,

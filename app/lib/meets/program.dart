@@ -124,7 +124,7 @@ class _MeetProgramState extends State<MeetProgram> {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SwimmerList(),
+                        builder: (context) => const SwimmerList(''),
                       ),
                     ),
                     leading: const Icon(
