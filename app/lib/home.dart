@@ -156,7 +156,7 @@ class _HomepageState extends State<Homepage> {
                     Expanded(
                       child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
-                          itemCount: 1,
+                          itemCount: selected == 1 ? 2 : 1,
                           itemBuilder: (context, int i) {
                             return GestureDetector(
                               onTap: () => Navigator.push(
@@ -195,12 +195,20 @@ class _HomepageState extends State<Homepage> {
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600))
                                     else if (selected == 1)
-                                      Text(
-                                          ('7th Novice Swim Meet 2023')
-                                              .toUpperCase(),
-                                          style: const TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600))
+                                      if (i == 0)
+                                        Text(
+                                            ('7th Novice Swim Meet 2023')
+                                                .toUpperCase(),
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600))
+                                      else
+                                        Text(
+                                            ('Sportexcel ASUM/NSC/MILO 2023')
+                                                .toUpperCase(),
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600))
                                     else
                                       Text(
                                           ('Sportexcel ASUM/NSC/MILO 2023')
