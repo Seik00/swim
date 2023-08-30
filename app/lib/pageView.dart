@@ -1,6 +1,6 @@
 import 'package:app/favourite.dart';
 import 'package:app/notification.dart';
-import 'package:app/settings.dart';
+import 'package:app/settings/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';

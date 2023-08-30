@@ -156,7 +156,7 @@ class _HomepageState extends State<Homepage> {
                     Expanded(
                       child: ListView.builder(
                           physics: const BouncingScrollPhysics(),
-                          itemCount: selected == 0 ? 1 : 0,
+                          itemCount: 1,
                           itemBuilder: (context, int i) {
                             return GestureDetector(
                               onTap: () => Navigator.push(
@@ -187,12 +187,27 @@ class _HomepageState extends State<Homepage> {
                                     const SizedBox(
                                       height: 5,
                                     ),
-                                    Text(
-                                        ('Sportexcel junior swimming circuit 2023')
-                                            .toUpperCase(),
-                                        style: const TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600)),
+                                    if (selected == 0)
+                                      Text(
+                                          ('Sportexcel junior swimming circuit 2023')
+                                              .toUpperCase(),
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600))
+                                    else if (selected == 1)
+                                      Text(
+                                          ('7th Novice Swim Meet 2023')
+                                              .toUpperCase(),
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600))
+                                    else
+                                      Text(
+                                          ('Sportexcel ASUM/NSC/MILO 2023')
+                                              .toUpperCase(),
+                                          style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600)),
                                     const SizedBox(
                                       height: 5,
                                     ),
