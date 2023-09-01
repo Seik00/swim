@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontWeight: FontWeight.bold,
                   fontSize: 20)),
           iconTheme: const IconThemeData(color: Colors.grey),
-          primaryColor: Colors.blue,
+          primaryColor: const Color(0xff000f9f),
           indicatorColor: Colors.blue,
           shadowColor: const Color.fromRGBO(171, 172, 175, 1),
           splashColor: Colors.white,

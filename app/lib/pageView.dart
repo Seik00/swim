@@ -1,3 +1,4 @@
+import 'package:app/cert/list.dart';
 import 'package:app/favourite.dart';
 import 'package:app/notification.dart';
 import 'package:app/settings/settings.dart';
@@ -20,6 +21,7 @@ class _PageViewingState extends State<PageViewing> {
       const Homepage(),
       const Favouritepage(),
       const Notificationpage(),
+      const CertList(),
       const Settingspage(),
     ];
 
@@ -30,6 +32,9 @@ class _PageViewingState extends State<PageViewing> {
           bottomNavigationBar: BottomNavigationBar(
             showSelectedLabels: false,
             showUnselectedLabels: false,
+            selectedIconTheme: const IconThemeData(
+              color: Color(0xff000f9f),
+            ),
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
@@ -41,6 +46,10 @@ class _PageViewingState extends State<PageViewing> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.notifications),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.workspace_premium),
                 label: '',
               ),
               BottomNavigationBarItem(
